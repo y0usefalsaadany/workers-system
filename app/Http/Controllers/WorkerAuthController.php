@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Admin;
+use App\Models\Worker;
 use Validator;
 
-class AdminController extends Controller
+class WorkerAuthController extends Controller
 {
     /**
      * Create a new AuthController instance.
@@ -16,7 +17,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin', ['except' => ['login', 'register']]);
+        $this->middleware('auth:worker', ['except' => ['login', 'register']]);
     }
     /**
      * Get a JWT via given credentials.
@@ -32,7 +33,7 @@ class AdminController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
-        if (!$token = auth()->attempt($validator->validated())) {
+        if (!$token = auth()->guard('worker')->attempt($validator->validated())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
         return $this->createNewToken($token);
@@ -46,19 +47,25 @@ class AdminController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|between:2,100',
-            'email' => 'required|string|email|max:100|unique:admins',
+            'email' => 'required|string|email|max:100|unique:workers',
             'password' => 'required|string|min:6',
+            'phone' => 'required|string|max:17',
+            'photo' => 'required|image|mimes:jpg,png,jpeg',
+            'location' => 'required|string|min:6',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors()->toJson(), 400);
         }
-        $user = Admin::create(array_merge(
+        $worker = Worker::create(array_merge(
             $validator->validated(),
-            ['password' => bcrypt($request->password)]
+            [
+                'password' => bcrypt($request->password),
+                'photo' => $request->file('photo')->store('workers'),
+            ]
         ));
         return response()->json([
             'message' => 'User successfully registered',
-            'user' => $user
+            'user' => $worker
         ], 201);
     }
 
@@ -69,7 +76,7 @@ class AdminController extends Controller
      */
     public function logout()
     {
-        auth()->logout();
+        auth()->guard('worker')->logout();
         return response()->json(['message' => 'User successfully signed out']);
     }
     /**
@@ -88,7 +95,7 @@ class AdminController extends Controller
      */
     public function userProfile()
     {
-        return response()->json(auth()->user());
+        return response()->json(auth()->guard('worker')->user());
     }
     /**
      * Get the token array structure.
@@ -103,7 +110,7 @@ class AdminController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
-            'user' => auth()->user()
+            'user' => auth()->guard('worker')->user()
         ]);
     }
 }
