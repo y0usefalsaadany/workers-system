@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Admin;
 use App\Models\Client;
+use Illuminate\Validation\Rule;
 use Validator;
 
 class ClientAuthController extends Controller
@@ -17,7 +18,7 @@ class ClientAuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:client', ['except' => ['login', 'register']]);
+        $this->middleware('auth:client', ['except' => ['login', 'register', 'put']]);
     }
     /**
      * Get a JWT via given credentials.
