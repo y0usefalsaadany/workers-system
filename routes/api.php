@@ -20,6 +20,7 @@ Route::middleware('DbBackup')->prefix('auth')->group(function () {
         Route::post('/logout', 'logout');
         Route::post('/refresh', 'refresh');
         Route::get('/user-profile', 'userProfile');
+        Route::get('/verify/{token}', 'verify');
     });
 
     Route::controller(ClientAuthController::class)->prefix('client')->group(function () {
@@ -30,3 +31,8 @@ Route::middleware('DbBackup')->prefix('auth')->group(function () {
         Route::get('/user-profile', 'userProfile');
     });
 });
+Route::get('/unauthorized', function () {
+    return response()->json([
+        "message" => "Unauthorized"
+    ], 401);
+})->name('login');

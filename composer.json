@@ -10,6 +10,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
+        "symfony/http-client": "^6.2",
+        "symfony/mailgun-mailer": "^6.3",
         "tymon/jwt-auth": "^2.0",
         "yousefpackage/lara-backup": "^1.0"
     },
