@@ -21,6 +21,7 @@ class Client extends Authenticatable implements JWTSubject
         'email',
         'password',
         'photo',
+        "phone"
     ];
     /**
      * The attributes that should be hidden for arrays.

@@ -1,0 +1,739 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 28, 2023 at 02:12 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `dys`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `phone` varchar(17) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `name`, `address`, `email`, `password`, `phone`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'يوسف السعدني', 'المنصورة', 'yousefalsaadany5@gmail.com', '$2y$10$VoLu5AU7IMy.1VaiYU.3PePqNsfMy/J7cVYdS3ZiE9pNlOJ9vkkPW', '01145258151', '2023-03-04 20:01:30', '2023-03-04 20:01:30', NULL),
+(2, 'محمود صابر', 'بنها', 'mahmoudysm@gmail.com', '$2y$10$BJiH7gdF7HSlB7KScFEeXeufAWliEZbCVBFM1Q92a6A8BPc3j.3wa', '01030843276', '2023-03-02 09:32:38', '2023-03-02 09:32:38', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alerts`
+--
+
+CREATE TABLE `alerts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `ip` varchar(45) NOT NULL,
+  `page_name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `alerts`
+--
+
+INSERT INTO `alerts` (`id`, `ip`, `page_name`, `created_at`, `updated_at`) VALUES
+(1, '127.0.0.1', 'http://127.0.0.1:8000', '2023-02-27 04:00:26', '2023-02-27 04:00:26'),
+(4, '127.0.0.1', 'http://127.0.0.1:8000', '2023-02-27 04:11:17', '2023-02-27 04:11:17'),
+(5, '127.0.0.1', 'http://127.0.0.1:8000', '2023-02-27 04:11:49', '2023-02-27 04:11:49'),
+(6, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 00:59:13', '2023-02-27 00:59:13'),
+(7, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 00:59:42', '2023-02-27 00:59:42'),
+(8, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 01:06:00', '2023-02-27 01:06:00'),
+(9, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 01:29:33', '2023-02-27 01:29:33'),
+(10, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 01:44:03', '2023-02-27 01:44:03'),
+(11, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 01:47:15', '2023-02-27 01:47:15'),
+(12, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 01:49:32', '2023-02-27 01:49:32'),
+(13, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 01:57:12', '2023-02-27 01:57:12'),
+(14, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 02:44:48', '2023-02-27 02:44:48'),
+(15, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 02:48:13', '2023-02-27 02:48:13'),
+(16, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 03:06:47', '2023-02-27 03:06:47'),
+(17, '102.47.98.219', 'https://forsaapis.mhouses.net/api/course/show/3', '2023-02-27 03:06:57', '2023-02-27 03:06:57'),
+(18, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 03:07:13', '2023-02-27 03:07:13'),
+(19, '102.47.98.219', 'https://forsaapis.mhouses.net/api/internship/show', '2023-02-27 03:45:51', '2023-02-27 03:45:51'),
+(20, '196.155.192.149', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 07:07:55', '2023-02-27 07:07:55'),
+(21, '196.155.192.242', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-27 08:49:36', '2023-02-27 08:49:36'),
+(22, '197.61.101.168', 'https://forsaapis.mhouses.net/api/course/show', '2023-02-27 14:24:05', '2023-02-27 14:24:05'),
+(23, '156.199.251.52', 'https://forsaapis.mhouses.net/api/category/show', '2023-02-28 20:00:14', '2023-02-28 20:00:14'),
+(24, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-03-02 05:20:45', '2023-03-02 05:20:45'),
+(25, '66.249.66.13', 'https://forsaapis.mhouses.net/api/internship/show', '2023-03-02 05:34:32', '2023-03-02 05:34:32'),
+(26, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-03-02 06:12:03', '2023-03-02 06:12:03'),
+(27, '102.47.98.219', 'https://forsaapis.mhouses.net/api/category/show', '2023-03-02 06:18:51', '2023-03-02 06:18:51'),
+(28, '102.47.98.219', 'https://forsaapis.mhouses.net/api/internship/show', '2023-03-02 08:43:19', '2023-03-02 08:43:19'),
+(29, '156.202.104.169', 'https://forsaapis.mhouses.net/api/course/show', '2023-03-02 14:07:23', '2023-03-02 14:07:23'),
+(30, '197.33.122.12', 'https://forsaapis.mhouses.net/api/category/show', '2023-03-04 04:27:00', '2023-03-04 04:27:00'),
+(31, '197.33.122.12', 'https://forsaapis.mhouses.net/api/category/show', '2023-03-04 04:27:01', '2023-03-04 04:27:01'),
+(32, '156.201.196.151', 'https://forsaapis.mhouses.net/api/course/show', '2023-04-04 15:25:05', '2023-04-04 15:25:05'),
+(33, '156.201.196.151', 'https://forsaapis.mhouses.net/api/course/show', '2023-04-04 15:25:12', '2023-04-04 15:25:12'),
+(34, '156.201.196.151', 'https://forsaapis.mhouses.net/api/course/show', '2023-04-04 15:25:20', '2023-04-04 15:25:20'),
+(35, '156.201.196.151', 'https://forsaapis.mhouses.net/api/internship/show', '2023-04-04 15:25:20', '2023-04-04 15:25:20'),
+(36, '156.201.196.151', 'https://forsaapis.mhouses.net/api/course/show', '2023-04-04 15:25:25', '2023-04-04 15:25:25'),
+(37, '156.201.196.151', 'https://forsaapis.mhouses.net/api/course/show', '2023-04-04 15:25:30', '2023-04-04 15:25:30'),
+(38, '156.201.196.151', 'https://forsaapis.mhouses.net/api/course/show', '2023-04-04 15:25:33', '2023-04-04 15:25:33'),
+(39, '156.201.196.151', 'https://forsaapis.mhouses.net/api/course/show', '2023-04-04 15:25:38', '2023-04-04 15:25:38'),
+(40, '197.41.47.195', 'https://forsaapis.mhouses.net/api/course/show', '2023-04-15 12:06:09', '2023-04-15 12:06:09'),
+(41, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:30:00', '2023-06-26 11:30:00'),
+(42, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:30:07', '2023-06-26 11:30:07'),
+(43, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:30:07', '2023-06-26 11:30:07'),
+(44, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:31:04', '2023-06-26 11:31:04'),
+(45, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:34:23', '2023-06-26 11:34:23'),
+(46, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:34:29', '2023-06-26 11:34:29'),
+(47, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:34:32', '2023-06-26 11:34:32'),
+(48, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:34:35', '2023-06-26 11:34:35'),
+(49, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:34:36', '2023-06-26 11:34:36'),
+(50, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:34:38', '2023-06-26 11:34:38'),
+(51, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:34:54', '2023-06-26 11:34:54'),
+(52, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:35:02', '2023-06-26 11:35:02'),
+(53, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:40:04', '2023-06-26 11:40:04'),
+(54, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:40:10', '2023-06-26 11:40:10'),
+(55, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:52:02', '2023-06-26 11:52:02'),
+(56, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:52:02', '2023-06-26 11:52:02'),
+(57, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:52:08', '2023-06-26 11:52:08'),
+(58, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:52:08', '2023-06-26 11:52:08'),
+(59, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:52:11', '2023-06-26 11:52:11'),
+(60, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:52:11', '2023-06-26 11:52:11'),
+(61, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:56:38', '2023-06-26 11:56:38'),
+(62, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:58:15', '2023-06-26 11:58:15'),
+(63, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:58:19', '2023-06-26 11:58:19'),
+(64, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 11:58:27', '2023-06-26 11:58:27'),
+(65, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:02:11', '2023-06-26 12:02:11'),
+(66, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:02:11', '2023-06-26 12:02:11'),
+(67, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:02:18', '2023-06-26 12:02:18'),
+(68, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:03:38', '2023-06-26 12:03:38'),
+(69, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:04:29', '2023-06-26 12:04:29'),
+(70, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:10:22', '2023-06-26 12:10:22'),
+(71, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:10:30', '2023-06-26 12:10:30'),
+(72, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:10:33', '2023-06-26 12:10:33'),
+(73, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:11:24', '2023-06-26 12:11:24'),
+(74, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:12:23', '2023-06-26 12:12:23'),
+(75, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:14:28', '2023-06-26 12:14:28'),
+(76, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:14:34', '2023-06-26 12:14:34'),
+(77, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:15:12', '2023-06-26 12:15:12'),
+(78, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:37:10', '2023-06-26 12:37:10'),
+(79, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:37:10', '2023-06-26 12:37:10'),
+(80, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:37:27', '2023-06-26 12:37:27'),
+(81, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 12:37:27', '2023-06-26 12:37:27'),
+(82, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 13:12:30', '2023-06-26 13:12:30'),
+(83, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 13:13:03', '2023-06-26 13:13:03'),
+(84, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:13:03', '2023-06-26 13:13:03'),
+(85, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 13:13:03', '2023-06-26 13:13:03'),
+(86, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:13:06', '2023-06-26 13:13:06'),
+(87, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 13:13:06', '2023-06-26 13:13:06'),
+(88, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:13:15', '2023-06-26 13:13:15'),
+(89, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:15:20', '2023-06-26 13:15:20'),
+(90, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 13:15:20', '2023-06-26 13:15:20'),
+(91, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:16:14', '2023-06-26 13:16:14'),
+(92, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 13:16:14', '2023-06-26 13:16:14'),
+(93, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:35:10', '2023-06-26 13:35:10'),
+(94, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:35:10', '2023-06-26 13:35:10'),
+(95, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:35:12', '2023-06-26 13:35:12'),
+(96, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:35:12', '2023-06-26 13:35:12'),
+(97, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:36:00', '2023-06-26 13:36:00'),
+(98, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 13:43:38', '2023-06-26 13:43:38'),
+(99, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:43:56', '2023-06-26 13:43:56'),
+(100, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 13:43:56', '2023-06-26 13:43:56'),
+(101, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:02:44', '2023-06-26 14:02:44'),
+(102, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:03:37', '2023-06-26 14:03:37'),
+(103, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:03:37', '2023-06-26 14:03:37'),
+(104, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:04:05', '2023-06-26 14:04:05'),
+(105, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:04:13', '2023-06-26 14:04:13'),
+(106, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:04:13', '2023-06-26 14:04:13'),
+(107, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:05:26', '2023-06-26 14:05:26'),
+(108, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:05:26', '2023-06-26 14:05:26'),
+(109, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:05:38', '2023-06-26 14:05:38'),
+(110, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:05:38', '2023-06-26 14:05:38'),
+(111, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:05:54', '2023-06-26 14:05:54'),
+(112, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:32:43', '2023-06-26 14:32:43'),
+(113, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:32:43', '2023-06-26 14:32:43'),
+(114, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:32:43', '2023-06-26 14:32:43'),
+(115, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:32:43', '2023-06-26 14:32:43'),
+(116, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:33:37', '2023-06-26 14:33:37'),
+(117, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:33:37', '2023-06-26 14:33:37'),
+(118, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:33:37', '2023-06-26 14:33:37'),
+(119, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:33:37', '2023-06-26 14:33:37'),
+(120, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:34:22', '2023-06-26 14:34:22'),
+(121, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:34:22', '2023-06-26 14:34:22'),
+(122, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:35:00', '2023-06-26 14:35:00'),
+(123, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:35:00', '2023-06-26 14:35:00'),
+(124, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:37:07', '2023-06-26 14:37:07'),
+(125, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:37:07', '2023-06-26 14:37:07'),
+(126, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:38:22', '2023-06-26 14:38:22'),
+(127, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:38:22', '2023-06-26 14:38:22'),
+(128, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:38:22', '2023-06-26 14:38:22'),
+(129, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:38:22', '2023-06-26 14:38:22'),
+(130, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:41:48', '2023-06-26 14:41:48'),
+(131, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:46:10', '2023-06-26 14:46:10'),
+(132, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:46:10', '2023-06-26 14:46:10'),
+(133, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 14:46:19', '2023-06-26 14:46:19'),
+(134, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-26 14:46:19', '2023-06-26 14:46:19'),
+(135, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 15:09:24', '2023-06-26 15:09:24'),
+(136, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-26 15:09:27', '2023-06-26 15:09:27'),
+(137, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 09:08:59', '2023-06-27 09:08:59'),
+(138, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-27 09:08:59', '2023-06-27 09:08:59'),
+(139, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-27 09:08:59', '2023-06-27 09:08:59'),
+(140, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 09:09:13', '2023-06-27 09:09:13'),
+(141, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 09:09:13', '2023-06-27 09:09:13'),
+(142, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 09:09:13', '2023-06-27 09:09:13'),
+(143, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 09:09:13', '2023-06-27 09:09:13'),
+(144, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-27 09:09:13', '2023-06-27 09:09:13'),
+(145, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-27 09:09:13', '2023-06-27 09:09:13'),
+(146, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-27 09:09:28', '2023-06-27 09:09:28'),
+(147, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 09:09:28', '2023-06-27 09:09:28'),
+(148, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 10:59:01', '2023-06-27 10:59:01'),
+(149, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 10:59:01', '2023-06-27 10:59:01'),
+(150, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-27 10:59:01', '2023-06-27 10:59:01'),
+(151, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 10:59:01', '2023-06-27 10:59:01'),
+(152, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 10:59:01', '2023-06-27 10:59:01'),
+(153, '41.36.191.183', 'https://forsaapis.mhouses.net/api/internship/show', '2023-06-27 10:59:01', '2023-06-27 10:59:01'),
+(154, '41.36.191.183', 'https://forsaapis.mhouses.net/api/category/show', '2023-06-27 10:59:12', '2023-06-27 10:59:12'),
+(155, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-27 10:59:15', '2023-06-27 10:59:15'),
+(156, '41.36.191.183', 'https://forsaapis.mhouses.net/api/course/show', '2023-06-27 10:59:15', '2023-06-27 10:59:15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'development', '2023-02-19 02:58:53', '2023-02-19 02:58:53'),
+(2, 'security', '2023-02-19 02:59:03', '2023-02-19 02:59:03'),
+(3, 'networking', '2023-02-19 02:59:12', '2023-02-19 02:59:12'),
+(4, 'business', NULL, NULL),
+(5, 'digital marketing and graphic', NULL, NULL),
+(6, 'entrepreneurship', '2023-02-26 12:37:24', NULL),
+(7, 'soft skills', '2023-02-26 12:39:14', NULL),
+(8, 'accounting', '2023-02-26 12:39:14', NULL),
+(9, 'hr', '2023-02-26 12:44:45', NULL),
+(10, 'ai', '2023-02-26 12:45:40', NULL),
+(11, 'freelance', '2023-03-18 11:13:42', '2023-03-18 11:13:42'),
+(12, 'voice over', '2023-03-18 11:14:36', '2023-03-18 11:14:36'),
+(13, 'Broadcasting', '2023-03-18 11:15:11', '2023-03-18 11:15:11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses`
+--
+
+CREATE TABLE `courses` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `course_name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `details` varchar(4000) NOT NULL,
+  `skills` varchar(1000) NOT NULL,
+  `hours` varchar(100) NOT NULL,
+  `price` varchar(5) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`id`, `course_name`, `address`, `details`, `skills`, `hours`, `price`, `status`, `photo`, `user_id`, `category_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 'Learn HTML & CSS', 'This Course is online', 'Such a course typically begins with an introduction to HTML, covering the basics of how to create a web page and structure its content using HTML tags. This will include an introduction to the most commonly-used HTML tags and their functions, as well as how to link to external resources such as images and stylesheets.', 'Basics', '4', '300', '1', 'uploads/courses/167678330663f1aeca5c0fbcourses.jpg', 3, 1, '2023-06-06 12:12:29', '2023-02-19 05:08:26', '2023-04-04 15:24:48'),
+(2, 'Learn JavaScript', 'This Course is online', 'In this course, we will be learning the basics of JavaScript. We will start with some history of JavaScript and why it was created. Then we will be creating basic code that teaches some foundations for the language. Once we have that under our belt, we will look at where JavaScript can be implemented in the latest cloud technologies as well as in modern web applications.', 'HTML', '14', '500', '1', 'uploads/courses/167713528463f70db4dc16acourses.jpg', 3, 1, '2023-06-12 12:12:33', '2023-02-23 06:54:44', '2023-02-24 05:08:45'),
+(3, 'كورس  node js backend development', 'المنصورة', 'هتطلع في الكورس ده فاهم اساسيات الباك اند كويس باستخدام ال node js', 'html css js es6 oop', '80', '2500', '0', 'uploads/courses/167714741563f73d17d43decourses.png', 2, 1, '2023-06-05 12:12:38', '2023-02-23 10:16:55', '2023-04-04 15:24:42'),
+(6, 'مقدمة في المحاسبة', 'المنصوره', 'هتتعلم في الكورس ده اساسيات المحاسبة وهتاخد مقدمة في محاسبة الشركات والضرايب والمالية', 'icdl', '50', '2000', '0', 'uploads/courses/167747024963fc2a29aba38courses.jpg', 2, 8, '2023-04-04 15:25:04', '2023-02-27 03:57:29', '2023-04-04 15:25:04'),
+(7, 'Learn JavaScript', 'This Course is online', 'avaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries.', 'HTML CSS', '25', '1000', '1', 'uploads/courses/167747027163fc2a3fc5b50courses.png', 3, 1, '2023-04-04 15:24:38', '2023-02-27 03:57:51', '2023-04-04 15:24:38'),
+(8, 'أساسيات الأمن السيبراني', 'This Course is online', 'فهم عناصر التحكم الأمنية للشبكات والخوادم والتطبيقات.\r\nتعرف على مبادئ الأمان القيمة وكيفية تطوير سياسات متوافقة.\r\nتنفيذ الإجراءات المناسبة لسرية البيانات وتوافرها.\r\nتطوير مهارات التفكير النقدي وحل المشكلات باستخدام معدات حقيقية و Cisco Packet Tracer.', 'Computer-Basics', '30', '3000', '1', 'uploads/courses/167747068463fc2bdcbc178courses.jpg', 3, 2, '2023-04-04 15:24:52', '2023-02-27 04:04:44', '2023-04-04 15:24:52'),
+(9, 'Advanced AI: Deep Reinforcement Learning in Python', 'This Course is online', 'Build various deep learning agents (including DQN and A3C)\r\nApply a variety of advanced reinforcement learning algorithms to any problem\r\nQ-Learning with Deep Neural Networks\r\nPolicy Gradient Methods with Neural Networks\r\nReinforcement Learning with RBF Networks\r\nUse Convolutional Neural Networks with Deep Q-Learning', 'basics MDPs Dynamic-Programming Monte-Carlo TD-Learning College-level-math Experience-in-Python-and-Numpy', '11', '350', '1', 'uploads/courses/167747103163fc2d37ef3fdcourses.jpg', 3, 10, NULL, '2023-02-27 04:10:31', '2023-02-27 04:10:31'),
+(14, 'دبلومة انشاء المحتوى الاحترافي   Content Creation', 'اونلاين', '🔥 دبلومة المحتوي الاحترافي \r\n\r\n( محاور دبلومة المحتوي الكتابي والمرئي والتسويقي) \r\n\r\nعدد المحاضرات : 10\r\nعدد الساعات : 20 ساعه تدريبيه وتطبيقية\r\nعدد الأيام: 3 ايام فالاسبوع \r\n\r\n👈🏻 1 جلسه تعريفية\r\n👈🏻 1 محاضره عامة\r\n👈🏻 3 محاضرات تعلم المحتوي الكتابي\r\n👈🏻 3 محاضرات تعلم المحتوي المرئي \r\n👈🏻 محاضرة تطبيق علي مواقع\r\n👈🏻 2 محاضرة تعلم المحتوي التسويقي \r\n\r\n____\r\n✅ جلسه تعريفية \r\n✨ تعريف وأهمية المجال  \r\n✨ الأهميه وفرص عمل المجال \r\n✨ أقسام المجال \r\n✨ 6 خطوات قبل البداية \r\n✨ الهدف الذكي Smart \r\n✨ تحليل المنافسين SWOT \r\n\r\n__\r\n✅ محاضرة عامة \r\n✨ شخصية المشتري Buyer Persona \r\n✨ عمل تعريف لمنتج Brief  \r\n✨ عمل لشركة Portfolio \r\n✨ مسميات الوظائف \r\n\r\n__\r\n✅ 3 محاضرة المحتوي الكتابي\r\n✨ أساسيات الكتابة \r\n✨ عناصر كتابة المحتوي Content Anatomy \r\n✨ نصائح عند الكتابة \r\n✨ أنواع كتابة المحتوي Content Writing Formulas \r\n✨ أنواع المقالات \r\n✨ أنواع السوشيال الميديا \r\n✨ استراتيجيات كتابة المحتوي \r\n✨ تعريف التجارة الإلكترونية E-Marketing \r\n✨ وصف Copy Writing \r\n\r\n____\r\n✅ 3 محاضرات المحتوي المرئي \r\n✨ الخطوط الإرشادية \r\n✨ 10 قواعد للكتابة\r\n✨ دائرة الإستفهام \r\n✨ تعريف الإسكريبت \r\n✨ أنواع الإسكريبت \r\n✨ صياغة الإسكريبت \r\n✨ أساسيات ديزاين Picsart – Canva \r\n✨ أساسيات يوتيوب Youtube \r\n\r\n_\r\n✅ محاضرة المواقع\r\n✨ تعريف محركات البحث SEO \r\n✨ أساليب البحث المتقدم \r\n✨ 5 مواقع كلمات مفتاحية \r\n✨ موقع خمسات  \r\n✨ منصة مستقل Mostaql \r\n✨ الفرق بين بطاقات البنكية Visa  / Master Card \r\n✨ التعامل والدفع اونلاين \r\n✨ عمل صفحة هبوط Landing Page \r\n\r\n____\r\n✅ 2 محاضرة المحتوي التسويقي \r\n✨ مراحل القمع التسويقي Marketing Funnel \r\n✨ المزيج التسويقي 4PS  / 7PS \r\n✨ خطة استراتيجية Marketing Strategy \r\n✨ طريقه عمل خطة تنفيذية  \r\n✨ أساسيات إدارة الصفحات Page Magement \r\n✨ عمل فورم Google Form \r\n✨ أساسيات الإعلانات الممولة ADS \r\n\r\n___\r\n✅ للحصول علي الشهادة\r\n✨ اختبارعلي دبلومة كاملة', 'مهارة البحث و مهارة تنظيم الأفكار', '20', '600', '1', 'uploads/courses/1680612931642c1e4304e05courses.jpg', 16, 5, NULL, '2023-04-04 12:55:31', '2023-04-04 12:55:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `course_subscribers`
+--
+
+CREATE TABLE `course_subscribers` (
+  `id` char(36) NOT NULL,
+  `course_id` bigint(20) UNSIGNED NOT NULL,
+  `price` varchar(5) NOT NULL,
+  `subscriber_id` bigint(20) UNSIGNED NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `university` varchar(20) NOT NULL,
+  `skills` varchar(300) NOT NULL,
+  `is_subscriber` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `db_alerts`
+--
+
+CREATE TABLE `db_alerts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `alert` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `internships`
+--
+
+CREATE TABLE `internships` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `internship_name` varchar(255) NOT NULL,
+  `details` varchar(1000) NOT NULL,
+  `skills` varchar(1000) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `number_of_months` varchar(100) NOT NULL,
+  `price` varchar(5) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `internships`
+--
+
+INSERT INTO `internships` (`id`, `internship_name`, `details`, `skills`, `address`, `number_of_months`, `price`, `status`, `photo`, `user_id`, `category_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 'React Internship', 'In an internship focused on HTML and CSS, you can expect to work closely with other members of the development team and receive feedback and guidance on your work. You may also have the opportunity to participate in training sessions or workshops to further develop your skills and knowledge.', 'HTML CSS JS ES6', 'This Course is online', '3', '500', '1', 'uploads/Internships/167678559163f1b7b77e34fInternships.png', 4, 1, NULL, '2023-02-19 05:46:31', '2023-02-19 05:46:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2020_12_08_214051_create_categories_table', 1),
+(6, '2022_12_09_040042_create_courses_table', 1),
+(7, '2022_12_09_053929_create_internships_table', 1),
+(8, '2023_01_16_160925_create_course_subscribers_table', 1),
+(11, '2022_10_15_120407_create_alerts_table', 2),
+(12, '2023_02_24_132637_create_admins_table', 1),
+(14, '2022_12_18_122635_create_subscribers_table', 3),
+(15, '2023_04_15_205626_create_db_alerts_table', 4),
+(16, '2023_06_28_082439_create_subscriber_skills_table', 4),
+(17, '2023_06_28_083416_add_columns_to_subscribers_table', 4),
+(18, '2023_06_28_083536_add_softdelets_to_userss_table', 5),
+(19, '2023_06_28_083640_add_softdelets_to_admins_table', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribers`
+--
+
+CREATE TABLE `subscribers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `address` varchar(255) NOT NULL,
+  `academic_level` enum('student','graduate') NOT NULL,
+  `gender` enum('male','female') NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `subscribers`
+--
+
+INSERT INTO `subscribers` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `address`, `academic_level`, `gender`, `deleted_at`) VALUES
+(1, 'يوسف السعدني', 'yousef1@gmail.com', '$2y$10$doupjVSzjK/dBE2sG7eZb.kzsCXG9RML1IKiMFqk5P0ikeg.OZwd.', '2023-06-28 08:34:15', '2023-06-28 08:34:15', 'mansoura', 'student', 'male', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscriber_skills`
+--
+
+CREATE TABLE `subscriber_skills` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subscriber_id` bigint(20) UNSIGNED NOT NULL,
+  `skill` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `subscriber_skills`
+--
+
+INSERT INTO `subscriber_skills` (`id`, `subscriber_id`, `skill`, `created_at`, `updated_at`) VALUES
+(1, 1, 'HTML', '2023-06-28 08:34:15', '2023-06-28 08:34:15'),
+(2, 1, 'ؤ', '2023-06-28 08:34:15', '2023-06-28 08:34:15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `type` varchar(15) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(400) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `years_of_experience` varchar(50) DEFAULT NULL,
+  `teach_courses` tinyint(1) DEFAULT NULL,
+  `phone` varchar(17) NOT NULL,
+  `gender` varchar(15) DEFAULT NULL,
+  `branches` varchar(255) NOT NULL,
+  `cv` varchar(255) DEFAULT NULL,
+  `employees_count` varchar(7) DEFAULT NULL,
+  `fields` varchar(255) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `percent` decimal(10,0) NOT NULL DEFAULT 20,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `type`, `name`, `address`, `email`, `password`, `years_of_experience`, `teach_courses`, `phone`, `gender`, `branches`, `cv`, `employees_count`, `fields`, `status`, `percent`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(2, 'instructor', 'يوسف السعدني', 'المنصورة', 'mahmoud@yousef.com', '$2y$10$bvKdELyQy.0iXoyJUqkvBeiQFhbKpP9eYRiG7oFoz7W2d/SLckIiG', 'من 0 الي 2', 1, '01148286749', 'ذكر', 'المنصورة - مدينة نصر', 'uploads/cv/167664022763ef7fe36810ccv.pdf', NULL, NULL, 1, 20, '2023-02-17 13:23:47', '2023-02-17 13:23:47', NULL),
+(3, 'instructor', 'محمود صابر', 'القليوبيه - شبين القناطر', 'mahmoud12@gmail.com', '$2y$10$sLur7UwST9ksNhQ1qpEn7.yeiQ5McgaFnPBr5MLgE3WIs/l1lL5E2', 'من 0 الي 2', 1, '01055433488', 'ذكر', 'القاهرة - مدينة نصر - الدقي', 'uploads/cv/167677544263f1901248978cv.pdf', NULL, NULL, 1, 20, '2023-02-19 02:57:22', '2023-02-19 02:57:22', NULL),
+(4, 'company', 'Zone', 'Unstated State', 'zone12@gmail.com', '$2y$10$lh4qBQPpT80SpQ1A3BUrH.fQIu5JEwN8q9XYoUxMfEKuL8/wKzzfi', NULL, NULL, '01055433481', NULL, 'Egypt - USA - Germany', NULL, '50', 'Networking - Development - Security', 0, 20, '2023-02-19 05:30:05', '2023-02-19 05:30:05', NULL),
+(5, 'company', 'Zone', 'Unstated State', 'zone@gmail.com', '$2y$10$BuLUO0iOd2Nx4XKPLFEp6uMxhpiHvLdkRcVWlYaJ3CgBCxZsX6DWy', NULL, NULL, '01055433481', NULL, 'Egypt - USA - Germany', NULL, '50', 'Networking - Development - Security', 0, 20, '2023-02-19 05:31:59', '2023-02-19 05:31:59', NULL),
+(14, 'company', 'MICHAEL', 'Michael', '42d05917e523@drmail.in', '$2y$10$Z0jW0Mwjz.fNQ0nGpxOj.Ozn0ZCgz6ORfp86ya1LTdn0NudWnJC0C', NULL, NULL, '01000000000', NULL, '20', NULL, '10', 'Technology', 0, 20, '2023-03-06 20:20:00', '2023-03-06 20:20:00', NULL),
+(16, 'instructor', 'GB Academy', 'الاسماعيليه', 'gharamwaelbesso@gmail.com', '$2y$10$Y3DonKj5fD/Ixra6HuGhneYjAkHNGRlgDSNTTDXq/1tbvNPcF2CsG', 'من 3 الي 6', 1, '201096902651', 'انثي', 'الاسماعيليه', 'uploads/cv/1680550768642b2b7053b3ccv.pdf', NULL, NULL, 1, 20, '2023-04-03 19:39:28', '2023-04-03 19:39:28', NULL),
+(17, 'company', 'ايتيت', 'وزينيز', 'yousefalsaadany5@gmail.com', '$2y$10$qS5Nn4EeQT4TU6RyCWaj7u5k909gkkbsIaZclGYVs8HRsfJmuFa82', NULL, NULL, '01554687976', NULL, 'bsbahagvs', NULL, '28', 'vbauaba', 1, 20, '2023-04-03 19:54:09', '2023-04-03 19:54:09', NULL),
+(22, 'company', 'microsoft', 'america', 'mahmo2@microsoft.com', '$2y$10$W/YPNIO2yii6sUhj57Tvj.LoL4u.kUmqiaRTzHfnKKaeLl8IWeDmG', NULL, NULL, '01102542544', NULL, 'microsoft', NULL, '5', 'software', 0, 20, '2023-06-28 06:48:23', '2023-06-28 06:48:23', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `admins_email_unique` (`email`);
+
+--
+-- Indexes for table `alerts`
+--
+ALTER TABLE `alerts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `courses_user_id_foreign` (`user_id`),
+  ADD KEY `courses_category_id_foreign` (`category_id`);
+
+--
+-- Indexes for table `course_subscribers`
+--
+ALTER TABLE `course_subscribers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `course_subscribers_course_id_foreign` (`course_id`),
+  ADD KEY `course_subscribers_subscriber_id_foreign` (`subscriber_id`);
+
+--
+-- Indexes for table `db_alerts`
+--
+ALTER TABLE `db_alerts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `internships`
+--
+ALTER TABLE `internships`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `internships_user_id_foreign` (`user_id`),
+  ADD KEY `internships_category_id_foreign` (`category_id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Indexes for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `subscribers_email_unique` (`email`);
+
+--
+-- Indexes for table `subscriber_skills`
+--
+ALTER TABLE `subscriber_skills`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `subscriber_skills_subscriber_id_foreign` (`subscriber_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `alerts`
+--
+ALTER TABLE `alerts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `db_alerts`
+--
+ALTER TABLE `db_alerts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `internships`
+--
+ALTER TABLE `internships`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `subscriber_skills`
+--
+ALTER TABLE `subscriber_skills`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `courses`
+--
+ALTER TABLE `courses`
+  ADD CONSTRAINT `courses_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `courses_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `course_subscribers`
+--
+ALTER TABLE `course_subscribers`
+  ADD CONSTRAINT `course_subscribers_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `course_subscribers_subscriber_id_foreign` FOREIGN KEY (`subscriber_id`) REFERENCES `subscribers` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `internships`
+--
+ALTER TABLE `internships`
+  ADD CONSTRAINT `internships_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `internships_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `subscriber_skills`
+--
+ALTER TABLE `subscriber_skills`
+  ADD CONSTRAINT `subscriber_skills_subscriber_id_foreign` FOREIGN KEY (`subscriber_id`) REFERENCES `subscribers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

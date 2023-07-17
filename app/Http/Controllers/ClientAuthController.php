@@ -51,6 +51,7 @@ class ClientAuthController extends Controller
             'email' => 'required|string|email|max:100|unique:clients',
             'password' => 'required|string|min:6',
             'photo' => 'required|image|mimes:jpg,png,jpeg',
+            'phone' => 'required|string|max:17',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors()->toJson(), 400);

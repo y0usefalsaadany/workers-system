@@ -2,9 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AdminController, ClientAuthController, WorkerAuthController};
+use App\Http\Controllers\{AdminController, ClientAuthController, ClientOrderController, PostController, WorkerAuthController, WorkerReviewController};
+use App\Http\Controllers\AdminDashboard\AdminNotificationController;
+use App\Http\Controllers\AdminDashboard\PostStatusController;
+use App\Http\Controllers\AdminDashboard\SmsNotificationController;
 
-Route::middleware('DbBackup')->prefix('auth')->group(function () {
+Route::prefix('auth')->group(function () {
 
     Route::controller(AdminController::class)->prefix('admin')->group(function () {
         Route::post('/login', 'login');
@@ -36,3 +39,40 @@ Route::get('/unauthorized', function () {
         "message" => "Unauthorized"
     ], 401);
 })->name('login');
+
+
+Route::controller(PostController::class)->prefix('worker/post')->group(function () {
+    Route::post('/add', 'store')->middleware('auth:worker');
+    Route::get('/show', 'index')->middleware('auth:admin');
+    Route::get('/approved', 'approved');
+});
+
+
+Route::prefix('worker')->group(function () {
+    Route::get('pendeing/orders', [ClientOrderController::class, 'workerOrder'])->middleware('auth:worker');
+    Route::put('update/order/{id}', [ClientOrderController::class, 'update'])->middleware('auth:worker');
+    Route::post('/review', [WorkerReviewController::class, 'store'])->middleware('auth:client');
+    Route::get('/review/post/{postId}', [WorkerReviewController::class, 'postRate']);
+});
+
+
+Route::prefix('admin')->group(function () {
+    Route::controller(PostStatusController::class)->prefix('/post')->group(function () {
+        Route::post('/status', 'changeStatus');
+    });
+    Route::controller(AdminNotificationController::class)
+        ->middleware('auth:admin')
+        ->prefix('admin/notifications')->group(function () {
+            Route::get('/all', 'index');
+            Route::get('/unread', 'unread');
+            Route::post('/markReadAll', 'markReadAll');
+            Route::delete('/deleteAll', 'deleteAll');
+            Route::delete('/delete/{id}', 'delete');
+        });
+});
+
+Route::prefix('client')->group(function () {
+    Route::controller(ClientOrderController::class)->prefix('/order')->group(function () {
+        Route::post('/request', 'addOrder')->middleware('auth:client');
+    });
+});

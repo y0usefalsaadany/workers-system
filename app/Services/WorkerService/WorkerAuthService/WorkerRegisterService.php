@@ -58,7 +58,7 @@ class WorkerRegisterService
             $email = $this->store($data, $request);
             $worker = $this->generateToken($email);
             // return $worker->email;
-            $this->sendEmail($worker);
+            // $this->sendEmail($worker);
             DB::commit();
             return response()->json([
                 "message" => "account has been created please check your email"
