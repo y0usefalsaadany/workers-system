@@ -9,6 +9,7 @@ use Validator;
 
 class AdminController extends Controller
 {
+    // test
     /**
      * Create a new AuthController instance.
      *
