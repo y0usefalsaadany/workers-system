@@ -12,5 +12,3 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.qadahaapp.com
-        username: myFtpUserName
-        password: ${{ secrets.ftp_password }}
