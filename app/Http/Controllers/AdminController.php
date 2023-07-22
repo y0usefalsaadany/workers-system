@@ -9,7 +9,6 @@ use Validator;
 
 class AdminController extends Controller
 {
-    // test
     /**
      * Create a new AuthController instance.
      *
@@ -106,5 +105,9 @@ class AdminController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60,
             'user' => auth()->user()
         ]);
+    }
+    public function name()
+    {
+        return "hello";
     }
 }
