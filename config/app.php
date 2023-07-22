@@ -171,9 +171,9 @@ return [
         App\Providers\RepoProvider::class,
         App\Providers\CrudRepoProvider::class,
 
-        Yousefpackage\LaraBackup\Providers\LaraBackupServiceProvider::class,
-        Yousefpackage\LaraBackup\Providers\BackupServiceProvider::class,
-        Yousefpackage\LaraBackup\Providers\RouteServiceProvider::class,
+        // Yousefpackage\LaraBackup\Providers\LaraBackupServiceProvider::class,
+        // Yousefpackage\LaraBackup\Providers\BackupServiceProvider::class,
+        // Yousefpackage\LaraBackup\Providers\RouteServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
     ])->toArray(),
 
