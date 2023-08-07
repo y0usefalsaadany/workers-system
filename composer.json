@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "nexmo/client": "*",
+        "spatie/laravel-query-builder": "^5.2",
         "symfony/http-client": "^6.2",
         "symfony/mailgun-mailer": "^6.3",
         "twilio/sdk": "^7.5",

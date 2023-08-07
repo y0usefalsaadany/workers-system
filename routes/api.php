@@ -40,7 +40,7 @@ Route::get('/unauthorized', function () {
     ], 401);
 })->name('login');
 
-// test
+
 Route::controller(PostController::class)->prefix('worker/post')->group(function () {
     Route::post('/add', 'store')->middleware('auth:worker');
     Route::get('/show', 'index')->middleware('auth:admin');
