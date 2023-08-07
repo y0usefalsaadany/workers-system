@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AdminController, ClientAuthController, ClientOrderController, PostController, WorkerAuthController, WorkerReviewController};
+use App\Http\Controllers\{AdminController, ClientAuthController, ClientOrderController, PostController, WorkerAuthController, WorkerProfileController, WorkerReviewController};
 use App\Http\Controllers\AdminDashboard\AdminNotificationController;
 use App\Http\Controllers\AdminDashboard\PostStatusController;
 use App\Http\Controllers\AdminDashboard\SmsNotificationController;
@@ -22,7 +22,6 @@ Route::prefix('auth')->group(function () {
         Route::post('/register', 'register');
         Route::post('/logout', 'logout');
         Route::post('/refresh', 'refresh');
-        Route::get('/user-profile', 'userProfile');
         Route::get('/verify/{token}', 'verify');
     });
 
@@ -49,10 +48,15 @@ Route::controller(PostController::class)->prefix('worker/post')->group(function 
 
 
 Route::prefix('worker')->group(function () {
+    // route::get('profile')
     Route::get('pendeing/orders', [ClientOrderController::class, 'workerOrder'])->middleware('auth:worker');
     Route::put('update/order/{id}', [ClientOrderController::class, 'update'])->middleware('auth:worker');
     Route::post('/review', [WorkerReviewController::class, 'store'])->middleware('auth:client');
-    Route::get('/review/post/{postId}', [WorkerReviewController::class, 'postRate']);
+    Route::get('/review/post/{postId}', [WorkerReviewController::class, 'postRate'])->middleware('auth:worker');
+    Route::get('/profile', [WorkerProfileController::class, 'userProfile'])->middleware('auth:worker');
+    Route::get('/profile/edit', [WorkerProfileController::class, 'edit'])->middleware('auth:worker');
+    Route::post('/profile/update', [WorkerProfileController::class, 'update'])->middleware('auth:worker');
+    Route::delete('/profile/posts/delete', [WorkerProfileController::class, 'delete'])->middleware('auth:worker');
 });
 
 
