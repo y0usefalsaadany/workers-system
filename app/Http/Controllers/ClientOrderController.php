@@ -27,11 +27,10 @@ class ClientOrderController extends Controller
 
     public function update($id, Request $request)
     {
-        $order = ClientOrder::findOrFail($id);
-        $order->setAttribute('status', $request->status)->save();
-        // $order->update(['status' => $request->status]);
-        return response()->json([
-            "message" => "updated"
-        ]);
+        return $this->crudRepo->update($id, $request);
+    }
+    public function approvedOrders()
+    {
+        return $this->crudRepo->approvedOrders();
     }
 }

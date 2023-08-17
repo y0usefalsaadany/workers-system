@@ -32,4 +32,21 @@ class ClientOrderRepo implements CrudRepoInterfaceInterface
             "orders" => $orders
         ]);
     }
+
+    public function update($id, $request)
+    {
+        $order = ClientOrder::findOrFail($id);
+        $order->setAttribute('status', $request->status)->save();
+        // $order->update(['status' => $request->status]);
+        return response()->json([
+            "message" => "updated"
+        ]);
+    }
+    public function approvedOrders()
+    {
+        $orders = ClientOrder::with('post')->whereStatus('approved')->where('client_id', auth()->guard('client')->id())->get();
+        return response()->json([
+            "orders" => $orders
+        ]);
+    }
 }

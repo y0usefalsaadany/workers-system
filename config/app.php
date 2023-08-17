@@ -170,7 +170,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepoProvider::class,
         App\Providers\CrudRepoProvider::class,
-
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         // Yousefpackage\LaraBackup\Providers\LaraBackupServiceProvider::class,
         // Yousefpackage\LaraBackup\Providers\BackupServiceProvider::class,
         // Yousefpackage\LaraBackup\Providers\RouteServiceProvider::class,
@@ -189,7 +189,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ])->toArray(),

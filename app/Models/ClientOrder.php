@@ -16,6 +16,6 @@ class ClientOrder extends Model
     }
     public function post()
     {
-        return $this->belongsTo(Post::class)->select('id', 'content');
+        return $this->belongsTo(Post::class)->select('id', 'content', 'price');
     }
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AdminController, ClientAuthController, ClientOrderController, PostController, WorkerAuthController, WorkerProfileController, WorkerReviewController};
+use App\Http\Controllers\{AdminController, ClientAuthController, ClientOrderController, ExportController, FileController, PaymentController, PostController, WorkerAuthController, WorkerProfileController, WorkerReviewController};
 use App\Http\Controllers\AdminDashboard\AdminNotificationController;
 use App\Http\Controllers\AdminDashboard\PostStatusController;
 use App\Http\Controllers\AdminDashboard\SmsNotificationController;
@@ -46,17 +46,19 @@ Route::controller(PostController::class)->prefix('worker/post')->group(function 
     Route::get('/approved', 'approved');
 });
 
+Route::post('/worker/review', [WorkerReviewController::class, 'store'])->middleware('auth:client');
 
-Route::prefix('worker')->group(function () {
-    // route::get('profile')
-    Route::get('pendeing/orders', [ClientOrderController::class, 'workerOrder'])->middleware('auth:worker');
-    Route::put('update/order/{id}', [ClientOrderController::class, 'update'])->middleware('auth:worker');
-    Route::post('/review', [WorkerReviewController::class, 'store'])->middleware('auth:client');
-    Route::get('/review/post/{postId}', [WorkerReviewController::class, 'postRate'])->middleware('auth:worker');
-    Route::get('/profile', [WorkerProfileController::class, 'userProfile'])->middleware('auth:worker');
-    Route::get('/profile/edit', [WorkerProfileController::class, 'edit'])->middleware('auth:worker');
-    Route::post('/profile/update', [WorkerProfileController::class, 'update'])->middleware('auth:worker');
-    Route::delete('/profile/posts/delete', [WorkerProfileController::class, 'delete'])->middleware('auth:worker');
+Route::prefix('worker')->middleware('auth:worker')->group(function () {
+
+    Route::get('export', [FileController::class, 'export']);
+    Route::post('import', [FileController::class, 'import']);
+    Route::get('pendeing/orders', [ClientOrderController::class, 'workerOrder']);
+    Route::put('update/order/{id}', [ClientOrderController::class, 'update']);
+    Route::get('/review/post/{postId}', [WorkerReviewController::class, 'postRate']);
+    Route::get('/profile', [WorkerProfileController::class, 'userProfile']);
+    Route::get('/profile/edit', [WorkerProfileController::class, 'edit']);
+    Route::post('/profile/update', [WorkerProfileController::class, 'update']);
+    Route::delete('/profile/posts/delete', [WorkerProfileController::class, 'delete']);
 });
 
 
@@ -78,5 +80,10 @@ Route::prefix('admin')->group(function () {
 Route::prefix('client')->group(function () {
     Route::controller(ClientOrderController::class)->prefix('/order')->group(function () {
         Route::post('/request', 'addOrder')->middleware('auth:client');
+        Route::get('/approved', 'approvedOrders')->middleware('auth:client');
+    });
+
+    Route::controller(PaymentController::class)->group(function () {
+        Route::get('/pay/{serviceId}', 'pay');
     });
 });
