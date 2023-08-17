@@ -1,0 +1,1448 @@
+{
+	"info": {
+		"_postman_id": "db5d4927-0690-472e-ba84-a2b927a32f39",
+		"name": "worker course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20234596",
+		"_collection_link": "https://blue-station-999675.postman.co/workspace/My-Workspace~78f14f88-b4db-4de0-8235-0582918abd9f/collection/20234596-db5d4927-0690-472e-ba84-a2b927a32f39?action=share&source=collection_link&creator=20234596"
+	},
+	"item": [
+		{
+			"name": "admin auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"yousef\",\r\n    \"email\":\"yousef2@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/auth/admin/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"yousef\",\r\n    \"email\":\"yousef2@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/auth/admin/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2ODUxMDk4MDEsImV4cCI6MTY4NTExMzQwMSwibmJmIjoxNjg1MTA5ODAxLCJqdGkiOiJuZVA2MThBZnZxTU5ROTdTIiwic3ViIjoiMiIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.rSyLhb8POe9J2R8dmj59Pg7jYB3eXWjBBTtOpVQPT9A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/admin/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "worker auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "yousef alsaadany",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yousefalsaadany@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "011111111111111",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "mansoura",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/E:/photos/1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/worker/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"worker",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "yousefalsaadany@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/worker/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"worker",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2ODUxMDc4MDksImV4cCI6MTY4NTExMTQwOSwibmJmIjoxNjg1MTA3ODA5LCJqdGkiOiJ3aFlad3ZyeXBFUUt4NURkIiwic3ViIjoiMiIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.Gkotqd699CzvU87Tq6tBdhbfry-m3V4MA-s1LYBSebg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/admin/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/worker/verify/bf4210ae89afe97052f755a02470c2f5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"worker",
+								"verify",
+								"bf4210ae89afe97052f755a02470c2f5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "client auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "client2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "client2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/E:/photos/1.jpg"
+								},
+								{
+									"key": "phone",
+									"value": "0114828674",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/client/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"client",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"client2@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/auth/client/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"client",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvYWRtaW4vbG9naW4iLCJpYXQiOjE2ODUxMDc4MDksImV4cCI6MTY4NTExMTQwOSwibmJmIjoxNjg1MTA3ODA5LCJqdGkiOiJ3aFlad3ZyeXBFUUt4NURkIiwic3ViIjoiMiIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.Gkotqd699CzvU87Tq6tBdhbfry-m3V4MA-s1LYBSebg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/admin/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "delete posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjkxNDM1MTU2LCJleHAiOjE2OTE0Mzg3NTYsIm5iZiI6MTY5MTQzNTE1NiwianRpIjoiZ1pyYnhKVjV2Y3BEakJ4MCIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.I3G1VcoExXRroGDxAuJvbA5MSUvBEX-Ck_eF4VrgFvU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/profile/posts/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"profile",
+								"posts",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjkyMjAzMDUxLCJleHAiOjE2OTIyMzkwNTEsIm5iZiI6MTY5MjIwMzA1MSwianRpIjoiOGxoN2Y4aVlKMUtjZVlLdCIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.MCJ-1P1P6Ka2PGIC1daeEJGn8myQcEhxJ-emODrtB7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "عمل  commerce بسعر 25 الف جنيه",
+									"type": "text"
+								},
+								{
+									"key": "photos[]",
+									"type": "file",
+									"src": "/C:/Users/Yousef/Pictures/Screenshot 2023-06-16 180920.png"
+								},
+								{
+									"key": "price",
+									"value": "25000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/worker/post/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"post",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change post status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjg4NTkwODg0LCJleHAiOjE2ODg1OTQ0ODQsIm5iZiI6MTY4ODU5MDg4NCwianRpIjoiRlo0QWd2enNmSmJqRVdOZyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.Su29gZNeHL3Ncc1XvWXrVfOm3MN9AB6aYpqfcCndWIM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_id\":1,\r\n    \"status\":\"approved\",\r\n    \"rejected_reason\":\"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/admin/post/status",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"post",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjg5MTc4MTI5LCJleHAiOjE2ODkxODE3MjksIm5iZiI6MTY4OTE3ODEyOSwianRpIjoidXBYVFZ2S2puOFdMWEZSdiIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.wz-N49m-i68na-XYxMPZBld5u7gBy_0iwZdffSv19_I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/post/show",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"post",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approved posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODE5MjQ0NTQsImV4cCI6MTY4MTkyODA1NCwibmJmIjoxNjgxOTI0NDU0LCJqdGkiOiJkQ0N1VHBCZWpKWVhmYVNqIiwic3ViIjoiOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RArbU0LpO_fKcQ1NK7b24w2zXw9ECFO1lG5HXXYm0so",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/post/approved",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"post",
+								"approved"
+							],
+							"query": [
+								{
+									"key": "filter[price]",
+									"value": "9500",
+									"disabled": true
+								},
+								{
+									"key": "filter[worker.name]",
+									"value": "mahmoud",
+									"disabled": true
+								},
+								{
+									"key": "filter[content]",
+									"value": "e",
+									"disabled": true
+								},
+								{
+									"key": "filter[item]",
+									"value": "1500",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "worker reviews",
+			"item": [
+				{
+					"name": "add review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvY2xpZW50L2xvZ2luIiwiaWF0IjoxNjg5NjIxNjk5LCJleHAiOjE2ODk2MjUyOTksIm5iZiI6MTY4OTYyMTY5OSwianRpIjoiMXZWUTdPdWVBSmlCdU02YiIsInN1YiI6IjIiLCJwcnYiOiI0MWVmYjdiYWQ3ZjZmNjMyZTI0MDViZDNhNzkzYjhhNmJkZWM2Nzc3In0.XB45I9NV4o1AchaRW9shp8Y0QIubTsUt7gtSc-VU_3Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_id\":1,\r\n    \"comment\":\"bad\",\r\n    \"rate\":3\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/worker/review",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all reviews",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjkxNDI1OTk2LCJleHAiOjE2OTE0Mjk1OTYsIm5iZiI6MTY5MTQyNTk5NiwianRpIjoiNW96dW95UWVMQ3hBczVqSyIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.txChSwRgGf9A3j8iKh5BF9inETpUDPbCKL6chuAZzpc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/post/show",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"post",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODE5MjQ0NTQsImV4cCI6MTY4MTkyODA1NCwibmJmIjoxNjgxOTI0NDU0LCJqdGkiOiJkQ0N1VHBCZWpKWVhmYVNqIiwic3ViIjoiOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RArbU0LpO_fKcQ1NK7b24w2zXw9ECFO1lG5HXXYm0so",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/review/post/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"review",
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin notifications",
+			"item": [
+				{
+					"name": "mark as Read all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjg2OTQxNDEyLCJleHAiOjE2ODY5NDUwMTIsIm5iZiI6MTY4Njk0MTQxMiwianRpIjoib3ZUUGtySzhsMkxDQlkwTiIsInN1YiI6IjIzIiwicHJ2IjoiMTVhMTJlMDdlNWM4NmE4MjNlYzUwODI2ZWIyYzllMWRhNjBkNzZmZCJ9.D2gKev3uzePCfyE08kMjxYZ5_b_JD7bRIslqqeNH1RM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "observer post",
+									"type": "text"
+								},
+								{
+									"key": "photos[]",
+									"type": "file",
+									"src": "/C:/Users/Yousef/Downloads/carbon.png"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/admin/notifications/markReadAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"notifications",
+								"markReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjg2OTQxNDEyLCJleHAiOjE2ODY5NDUwMTIsIm5iZiI6MTY4Njk0MTQxMiwianRpIjoib3ZUUGtySzhsMkxDQlkwTiIsInN1YiI6IjIzIiwicHJ2IjoiMTVhMTJlMDdlNWM4NmE4MjNlYzUwODI2ZWIyYzllMWRhNjBkNzZmZCJ9.D2gKev3uzePCfyE08kMjxYZ5_b_JD7bRIslqqeNH1RM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "observer post",
+									"type": "text"
+								},
+								{
+									"key": "photos[]",
+									"type": "file",
+									"src": "/C:/Users/Yousef/Downloads/carbon.png"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/admin/notifications/deleteAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"notifications",
+								"deleteAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjg2OTQxNDEyLCJleHAiOjE2ODY5NDUwMTIsIm5iZiI6MTY4Njk0MTQxMiwianRpIjoib3ZUUGtySzhsMkxDQlkwTiIsInN1YiI6IjIzIiwicHJ2IjoiMTVhMTJlMDdlNWM4NmE4MjNlYzUwODI2ZWIyYzllMWRhNjBkNzZmZCJ9.D2gKev3uzePCfyE08kMjxYZ5_b_JD7bRIslqqeNH1RM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "observer post",
+									"type": "text"
+								},
+								{
+									"key": "photos[]",
+									"type": "file",
+									"src": "/C:/Users/Yousef/Downloads/carbon.png"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/admin/notifications/delete/0fcbc4f2-f9f7-48ed-992d-d08a5da53bcb",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"notifications",
+								"delete",
+								"0fcbc4f2-f9f7-48ed-992d-d08a5da53bcb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all notifications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODE5MjQ0NTQsImV4cCI6MTY4MTkyODA1NCwibmJmIjoxNjgxOTI0NDU0LCJqdGkiOiJkQ0N1VHBCZWpKWVhmYVNqIiwic3ViIjoiOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RArbU0LpO_fKcQ1NK7b24w2zXw9ECFO1lG5HXXYm0so",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/admin/notifications/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"notifications",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unread notifications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODE5MjQ0NTQsImV4cCI6MTY4MTkyODA1NCwibmJmIjoxNjgxOTI0NDU0LCJqdGkiOiJkQ0N1VHBCZWpKWVhmYVNqIiwic3ViIjoiOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RArbU0LpO_fKcQ1NK7b24w2zXw9ECFO1lG5HXXYm0so",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/admin/notifications/unread",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"notifications",
+								"unread"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client Orders",
+			"item": [
+				{
+					"name": "approved orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvY2xpZW50L2xvZ2luIiwiaWF0IjoxNjkyMjAyNjg1LCJleHAiOjE2OTIyMDYyODUsIm5iZiI6MTY5MjIwMjY4NSwianRpIjoiQXU2QUk5V0ppU2hPOUJnMSIsInN1YiI6IjEiLCJwcnYiOiI0MWVmYjdiYWQ3ZjZmNjMyZTI0MDViZDNhNzkzYjhhNmJkZWM2Nzc3In0.PO1m_l2gwxXqSNgF4gnwP8FmvWqQ9OUaBDAHxaI19dE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/client/order/approved",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"client",
+								"order",
+								"approved"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvY2xpZW50L2xvZ2luIiwiaWF0IjoxNjkyMjAyNjg1LCJleHAiOjE2OTIyMDYyODUsIm5iZiI6MTY5MjIwMjY4NSwianRpIjoiQXU2QUk5V0ppU2hPOUJnMSIsInN1YiI6IjEiLCJwcnYiOiI0MWVmYjdiYWQ3ZjZmNjMyZTI0MDViZDNhNzkzYjhhNmJkZWM2Nzc3In0.PO1m_l2gwxXqSNgF4gnwP8FmvWqQ9OUaBDAHxaI19dE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_id\":1\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/client/order/request",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"client",
+								"order",
+								"request"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Worker",
+			"item": [
+				{
+					"name": "update order status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjkyMjAzMDUxLCJleHAiOjE2OTIyMzkwNTEsIm5iZiI6MTY5MjIwMzA1MSwianRpIjoiOGxoN2Y4aVlKMUtjZVlLdCIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.MCJ-1P1P6Ka2PGIC1daeEJGn8myQcEhxJ-emODrtB7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"approved\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/worker/update/order/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"update",
+								"order",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "worker orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjkyMjAzMDUxLCJleHAiOjE2OTIyMzkwNTEsIm5iZiI6MTY5MjIwMzA1MSwianRpIjoiOGxoN2Y4aVlKMUtjZVlLdCIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.MCJ-1P1P6Ka2PGIC1daeEJGn8myQcEhxJ-emODrtB7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/pendeing/orders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"pendeing",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjkxNDM1MTU2LCJleHAiOjE2OTE0Mzg3NTYsIm5iZiI6MTY5MTQzNTE1NiwianRpIjoiZ1pyYnhKVjV2Y3BEakJ4MCIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.I3G1VcoExXRroGDxAuJvbA5MSUvBEX-Ck_eF4VrgFvU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/profile/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"profile",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjkxNDM2OTcyLCJleHAiOjE2OTE0NDA1NzIsIm5iZiI6MTY5MTQzNjk3MiwianRpIjoieHJrZUg1WFhRd1JwTFpEciIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.YN8bFKE-42CnWeZRUyWlmhX5tV_32OXNXAktRVcgZUI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "yousef alsaadany",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yousefalsaadany5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567891",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "011111111111111",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "mansoura",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/E:/photos/2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/worker/profile/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "impoer file excel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "excelFile",
+									"type": "file",
+									"src": "/C:/Users/Yousef/Desktop/worker(1).xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/worker/import",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"import"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "pay",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvY2xpZW50L2xvZ2luIiwiaWF0IjoxNjkxNTYxNTE5LCJleHAiOjE2OTE1NjUxMTksIm5iZiI6MTY5MTU2MTUxOSwianRpIjoicW8wNDA5S2dJTzlzMEpOeCIsInN1YiI6IjEiLCJwcnYiOiI0MWVmYjdiYWQ3ZjZmNjMyZTI0MDViZDNhNzkzYjhhNmJkZWM2Nzc3In0.ulokyLQl8JVBvqHaFHi3IOJQScmHrZ_f04WaKV87-Fs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/client/pay/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"client",
+								"pay",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvd29ya2VyL2xvZ2luIiwiaWF0IjoxNjkxNDM2OTcyLCJleHAiOjE2OTE0NDA1NzIsIm5iZiI6MTY5MTQzNjk3MiwianRpIjoieHJrZUg1WFhRd1JwTFpEciIsInN1YiI6IjEiLCJwcnYiOiIxNWExMmUwN2U1Yzg2YTgyM2VjNTA4MjZlYjJjOWUxZGE2MGQ3NmZkIn0.YN8bFKE-42CnWeZRUyWlmhX5tV_32OXNXAktRVcgZUI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "yousef alsaadany",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yousefalsaadany5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567891",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "011111111111111",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "mansoura",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/Yousef/Pictures/Screenshot 2023-06-16 180920.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/worker/profile/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/sms/send",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"sms",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
